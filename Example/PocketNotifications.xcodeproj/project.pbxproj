@@ -7,20 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* NotificationsClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* NotificationsClientTests.swift */; };
 		73DE23F9100DB410DD185DF4 /* Pods_PocketNotifications_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8535E2EAD635211DE8C03E /* Pods_PocketNotifications_Tests.framework */; };
+		F66D7ECF250FA63300BC02D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D7ECE250FA63300BC02D4 /* AppDelegate.swift */; };
+		F66D7ED1250FA63300BC02D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D7ED0250FA63300BC02D4 /* SceneDelegate.swift */; };
+		F66D7ED3250FA63300BC02D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D7ED2250FA63300BC02D4 /* ViewController.swift */; };
+		F66D7ED6250FA63300BC02D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66D7ED4250FA63300BC02D4 /* Main.storyboard */; };
+		F66D7ED8250FA63500BC02D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66D7ED7250FA63500BC02D4 /* Assets.xcassets */; };
+		F66D7EDB250FA63500BC02D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66D7ED9250FA63500BC02D4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F66D7EE0250FA63D00BC02D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F66D7ECB250FA63300BC02D4;
+			remoteInfo = "PocketNotification-Example";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0BF00E177A42F542F817EF0B /* Pods-PocketNotifications_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketNotifications_Tests.release.xcconfig"; path = "Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3A7C70282B84C128B5FB0BE3 /* PocketNotifications.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = PocketNotifications.podspec; path = ../PocketNotifications.podspec; sourceTree = "<group>"; };
+		3A7C70282B84C128B5FB0BE3 /* PocketNotifications.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PocketNotifications.podspec; path = ../PocketNotifications.podspec; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* PocketNotifications_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketNotifications_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* NotificationsClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsClientTests.swift; sourceTree = "<group>"; };
 		CD8535E2EAD635211DE8C03E /* Pods_PocketNotifications_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketNotifications_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA570EC270887A0426583F94 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F1E60F9299E8DD3C2FF87CB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DA570EC270887A0426583F94 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F1E60F9299E8DD3C2FF87CB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F5ECF977B8DB5144A76F4B3D /* Pods-PocketNotifications_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketNotifications_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F66D7ECC250FA63300BC02D4 /* PocketNotification-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PocketNotification-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66D7ECE250FA63300BC02D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F66D7ED0250FA63300BC02D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F66D7ED2250FA63300BC02D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F66D7ED5250FA63300BC02D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F66D7ED7250FA63500BC02D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F66D7EDA250FA63500BC02D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F66D7EDC250FA63500BC02D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +53,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				73DE23F9100DB410DD185DF4 /* Pods_PocketNotifications_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66D7EC9250FA63300BC02D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +72,6 @@
 				F5ECF977B8DB5144A76F4B3D /* Pods-PocketNotifications_Tests.debug.xcconfig */,
 				0BF00E177A42F542F817EF0B /* Pods-PocketNotifications_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -50,6 +80,7 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				F66D7ECD250FA63300BC02D4 /* PocketNotification-Example */,
 				607FACD11AFB9204008FA782 /* Products */,
 				3AB2BC8D0B529E2DC4B3260A /* Pods */,
 				F1592BEAEB07CA64C9342BBA /* Frameworks */,
@@ -60,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACE51AFB9204008FA782 /* PocketNotifications_Tests.xctest */,
+				F66D7ECC250FA63300BC02D4 /* PocketNotification-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +99,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* NotificationsClientTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -99,6 +131,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F66D7ECD250FA63300BC02D4 /* PocketNotification-Example */ = {
+			isa = PBXGroup;
+			children = (
+				F66D7ECE250FA63300BC02D4 /* AppDelegate.swift */,
+				F66D7ED0250FA63300BC02D4 /* SceneDelegate.swift */,
+				F66D7ED2250FA63300BC02D4 /* ViewController.swift */,
+				F66D7ED4250FA63300BC02D4 /* Main.storyboard */,
+				F66D7ED7250FA63500BC02D4 /* Assets.xcassets */,
+				F66D7ED9250FA63500BC02D4 /* LaunchScreen.storyboard */,
+				F66D7EDC250FA63500BC02D4 /* Info.plist */,
+			);
+			path = "PocketNotification-Example";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,16 +156,34 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				A33287EE43A06C63AD5C9EAA /* [CP] Embed Pods Frameworks */,
+				7A10598C87EE46E776362E94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F66D7EE1250FA63D00BC02D4 /* PBXTargetDependency */,
 			);
 			name = PocketNotifications_Tests;
 			productName = Tests;
 			productReference = 607FACE51AFB9204008FA782 /* PocketNotifications_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F66D7ECB250FA63300BC02D4 /* PocketNotification-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F66D7EDD250FA63500BC02D4 /* Build configuration list for PBXNativeTarget "PocketNotification-Example" */;
+			buildPhases = (
+				F66D7EC8250FA63300BC02D4 /* Sources */,
+				F66D7EC9250FA63300BC02D4 /* Frameworks */,
+				F66D7ECA250FA63300BC02D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PocketNotification-Example";
+			productName = "PocketNotification-Example";
+			productReference = F66D7ECC250FA63300BC02D4 /* PocketNotification-Example.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -127,18 +191,18 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
-						TestTargetID = 607FACCF1AFB9204008FA782;
+						TestTargetID = F66D7ECB250FA63300BC02D4;
+					};
+					F66D7ECB250FA63300BC02D4 = {
+						CreatedOnToolsVersion = 12.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -147,6 +211,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -155,6 +220,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				F66D7ECB250FA63300BC02D4 /* PocketNotification-Example */,
 				607FACE41AFB9204008FA782 /* PocketNotifications_Tests */,
 			);
 		};
@@ -165,6 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66D7ECA250FA63300BC02D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F66D7EDB250FA63500BC02D4 /* LaunchScreen.storyboard in Resources */,
+				F66D7ED8250FA63500BC02D4 /* Assets.xcassets in Resources */,
+				F66D7ED6250FA63300BC02D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,18 +269,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A33287EE43A06C63AD5C9EAA /* [CP] Embed Pods Frameworks */ = {
+		7A10598C87EE46E776362E94 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PocketNotifications/PocketNotifications.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketNotifications.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -218,17 +296,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* NotificationsClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66D7EC8250FA63300BC02D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F66D7ED3250FA63300BC02D4 /* ViewController.swift in Sources */,
+				F66D7ECF250FA63300BC02D4 /* AppDelegate.swift in Sources */,
+				F66D7ED1250FA63300BC02D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F66D7EE1250FA63D00BC02D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F66D7ECB250FA63300BC02D4 /* PocketNotification-Example */;
+			targetProxy = F66D7EE0250FA63D00BC02D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F66D7ED4250FA63300BC02D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F66D7ED5250FA63300BC02D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F66D7ED9250FA63500BC02D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F66D7EDA250FA63500BC02D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -237,14 +353,17 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -270,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -290,14 +410,17 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -316,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -328,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5ECF977B8DB5144A76F4B3D /* Pods-PocketNotifications_Tests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -341,8 +465,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotifications_Example.app/PocketNotifications_Example";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotification-Example.app/PocketNotification-Example";
 			};
 			name = Debug;
 		};
@@ -350,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BF00E177A42F542F817EF0B /* Pods-PocketNotifications_Tests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -359,8 +484,59 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotifications_Example.app/PocketNotifications_Example";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotification-Example.app/PocketNotification-Example";
+			};
+			name = Release;
+		};
+		F66D7EDE250FA63500BC02D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "PocketNotification-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pocket-ninja.PocketNotification-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F66D7EDF250FA63500BC02D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "PocketNotification-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pocket-ninja.PocketNotification-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -381,6 +557,15 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F66D7EDD250FA63500BC02D4 /* Build configuration list for PBXNativeTarget "PocketNotification-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F66D7EDE250FA63500BC02D4 /* Debug */,
+				F66D7EDF250FA63500BC02D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
