@@ -2,7 +2,7 @@ default_platform :ios
 skip_docs
 opt_out_usage
 
-$scheme = 'PocketNotifications-Example'
+$scheme = 'PocketNotification-Example'
 $podspec = 'PocketNotifications.podspec'
 $workspace = './Example/PocketNotifications.xcworkspace'
 $specsrepo = 'git@github.com:pocket-ninja/specs.git'
