@@ -1,0 +1,6 @@
+use_frameworks!
+target 'PocketNotifications_Tests' do
+  pod 'PocketNotifications', :path => '../'
+  
+  
+end
