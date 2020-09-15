@@ -27,7 +27,7 @@ lane :major do
   update(type: "major")
 end
 
-lane :submit_pod do |options|
+lane :submit do |options|
   push_to_git_remote(
     local_branch: "master",
     remote_branch: "master",
