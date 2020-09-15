@@ -2,7 +2,7 @@ import RxRelay
 import UserNotifications
 
 extension NotificationsClient {
-    public static let live: NotificationsClient = {
+    public static func live(defaults: UserDefaults = .standard) -> NotificationsClient {
         class Delegate: NSObject, UNUserNotificationCenterDelegate {
             var relay = PublishRelay<DelegateEvent>()
 
@@ -24,20 +24,13 @@ extension NotificationsClient {
         center.delegate = delegate
 
         return NotificationsClient(
-            getAuthorizationStatus: { completion in
-                _ = delegate
-
-                center.getNotificationSettings { settings in
-                    DispatchQueue.main.async {
-                        completion(settings.authorizationStatus)
-                    }
-                }
-            },
+            authorizationStatus: { defaults.authorizationStatus ?? .notDetermined },
             authorize: { options, completion in
                 center.requestAuthorization(options: options) { granted, _ in
                     DispatchQueue.main.async {
-                        delegate.relay.accept(.didChangeAuthorization(granted))
+                        delegate.relay.accept(.didChangeAuthorization(granted: granted))
                         completion(granted)
+                        defaults.authorizationStatus = granted ? .authorized : .denied
                     }
                 }
                 UIApplication.shared.registerForRemoteNotifications()
@@ -55,5 +48,25 @@ extension NotificationsClient {
             },
             delegate: delegate.relay.asObservable()
         )
-    }()
+    }
+}
+
+private extension UserDefaults {
+    var authorizationStatus: NotificationsClient.AuthorizationStatus? {
+        get {
+            string(forKey: .authorizationStatusKey)
+                .flatMap(NotificationsClient.AuthorizationStatus.init(rawValue:))
+        }
+        set {
+            if let value = newValue {
+                set(value.rawValue, forKey: .authorizationStatusKey)
+            } else {
+                removeObject(forKey: .authorizationStatusKey)
+            }
+        }
+    }
+}
+
+private extension String {
+    static let authorizationStatusKey = "com.pocket-ninja.notifications.authorizationStatus"
 }

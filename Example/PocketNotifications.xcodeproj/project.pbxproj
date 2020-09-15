@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CA912C67F04E0A566896B09 /* Pods_PocketNotifications_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41267678AEC1EA3CA21CEA1 /* Pods_PocketNotifications_Example.framework */; };
 		607FACEC1AFB9204008FA782 /* NotificationsClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* NotificationsClientTests.swift */; };
 		73DE23F9100DB410DD185DF4 /* Pods_PocketNotifications_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8535E2EAD635211DE8C03E /* Pods_PocketNotifications_Tests.framework */; };
 		F66D7ECF250FA63300BC02D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D7ECE250FA63300BC02D4 /* AppDelegate.swift */; };
@@ -30,14 +31,17 @@
 /* Begin PBXFileReference section */
 		0BF00E177A42F542F817EF0B /* Pods-PocketNotifications_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketNotifications_Tests.release.xcconfig"; path = "Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3A7C70282B84C128B5FB0BE3 /* PocketNotifications.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PocketNotifications.podspec; path = ../PocketNotifications.podspec; sourceTree = "<group>"; };
+		5E3CECB47D9EC1E729B954E8 /* Pods-PocketNotifications-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketNotifications-Example.debug.xcconfig"; path = "Target Support Files/Pods-PocketNotifications-Example/Pods-PocketNotifications-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* PocketNotifications_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketNotifications_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* NotificationsClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsClientTests.swift; sourceTree = "<group>"; };
+		7F3C31278B44EEB46A5B9026 /* Pods-PocketNotifications-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketNotifications-Example.release.xcconfig"; path = "Target Support Files/Pods-PocketNotifications-Example/Pods-PocketNotifications-Example.release.xcconfig"; sourceTree = "<group>"; };
 		CD8535E2EAD635211DE8C03E /* Pods_PocketNotifications_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketNotifications_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA570EC270887A0426583F94 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F1E60F9299E8DD3C2FF87CB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F41267678AEC1EA3CA21CEA1 /* Pods_PocketNotifications_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketNotifications_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5ECF977B8DB5144A76F4B3D /* Pods-PocketNotifications_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketNotifications_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F66D7ECC250FA63300BC02D4 /* PocketNotification-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PocketNotification-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66D7ECC250FA63300BC02D4 /* PocketNotifications-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PocketNotifications-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66D7ECE250FA63300BC02D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66D7ED0250FA63300BC02D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F66D7ED2250FA63300BC02D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA912C67F04E0A566896B09 /* Pods_PocketNotifications_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +76,8 @@
 			children = (
 				F5ECF977B8DB5144A76F4B3D /* Pods-PocketNotifications_Tests.debug.xcconfig */,
 				0BF00E177A42F542F817EF0B /* Pods-PocketNotifications_Tests.release.xcconfig */,
+				5E3CECB47D9EC1E729B954E8 /* Pods-PocketNotifications-Example.debug.xcconfig */,
+				7F3C31278B44EEB46A5B9026 /* Pods-PocketNotifications-Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -91,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACE51AFB9204008FA782 /* PocketNotifications_Tests.xctest */,
-				F66D7ECC250FA63300BC02D4 /* PocketNotification-Example.app */,
+				F66D7ECC250FA63300BC02D4 /* PocketNotifications-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CD8535E2EAD635211DE8C03E /* Pods_PocketNotifications_Tests.framework */,
+				F41267678AEC1EA3CA21CEA1 /* Pods_PocketNotifications_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,7 +164,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				7A10598C87EE46E776362E94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,21 +175,23 @@
 			productReference = 607FACE51AFB9204008FA782 /* PocketNotifications_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F66D7ECB250FA63300BC02D4 /* PocketNotification-Example */ = {
+		F66D7ECB250FA63300BC02D4 /* PocketNotifications-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F66D7EDD250FA63500BC02D4 /* Build configuration list for PBXNativeTarget "PocketNotification-Example" */;
+			buildConfigurationList = F66D7EDD250FA63500BC02D4 /* Build configuration list for PBXNativeTarget "PocketNotifications-Example" */;
 			buildPhases = (
+				C6DAAA351E960FB719B00B88 /* [CP] Check Pods Manifest.lock */,
 				F66D7EC8250FA63300BC02D4 /* Sources */,
 				F66D7EC9250FA63300BC02D4 /* Frameworks */,
 				F66D7ECA250FA63300BC02D4 /* Resources */,
+				A7EEBB433AC836E9ED3FFD99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "PocketNotification-Example";
+			name = "PocketNotifications-Example";
 			productName = "PocketNotification-Example";
-			productReference = F66D7ECC250FA63300BC02D4 /* PocketNotification-Example.app */;
+			productReference = F66D7ECC250FA63300BC02D4 /* PocketNotifications-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +229,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F66D7ECB250FA63300BC02D4 /* PocketNotification-Example */,
+				F66D7ECB250FA63300BC02D4 /* PocketNotifications-Example */,
 				607FACE41AFB9204008FA782 /* PocketNotifications_Tests */,
 			);
 		};
@@ -269,13 +278,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A10598C87EE46E776362E94 /* [CP] Embed Pods Frameworks */ = {
+		A7EEBB433AC836E9ED3FFD99 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PocketNotifications-Example/Pods-PocketNotifications-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -286,7 +295,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PocketNotifications_Tests/Pods-PocketNotifications_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PocketNotifications-Example/Pods-PocketNotifications-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6DAAA351E960FB719B00B88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketNotifications-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -315,7 +346,7 @@
 /* Begin PBXTargetDependency section */
 		F66D7EE1250FA63D00BC02D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F66D7ECB250FA63300BC02D4 /* PocketNotification-Example */;
+			target = F66D7ECB250FA63300BC02D4 /* PocketNotifications-Example */;
 			targetProxy = F66D7EE0250FA63D00BC02D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -466,7 +497,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotification-Example.app/PocketNotification-Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotifications-Example.app/PocketNotifications-Example";
 			};
 			name = Debug;
 		};
@@ -485,12 +516,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotification-Example.app/PocketNotification-Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketNotifications-Example.app/PocketNotifications-Example";
 			};
 			name = Release;
 		};
 		F66D7EDE250FA63500BC02D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E3CECB47D9EC1E729B954E8 /* Pods-PocketNotifications-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -518,6 +550,7 @@
 		};
 		F66D7EDF250FA63500BC02D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F3C31278B44EEB46A5B9026 /* Pods-PocketNotifications-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -561,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F66D7EDD250FA63500BC02D4 /* Build configuration list for PBXNativeTarget "PocketNotification-Example" */ = {
+		F66D7EDD250FA63500BC02D4 /* Build configuration list for PBXNativeTarget "PocketNotifications-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F66D7EDE250FA63500BC02D4 /* Debug */,

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F66D7ECB250FA63300BC02D4"
-               BuildableName = "PocketNotification-Example.app"
-               BlueprintName = "PocketNotification-Example"
+               BuildableName = "PocketNotifications-Example.app"
+               BlueprintName = "PocketNotifications-Example"
                ReferencedContainer = "container:PocketNotifications.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,8 +55,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F66D7ECB250FA63300BC02D4"
-            BuildableName = "PocketNotification-Example.app"
-            BlueprintName = "PocketNotification-Example"
+            BuildableName = "PocketNotifications-Example.app"
+            BlueprintName = "PocketNotifications-Example"
             ReferencedContainer = "container:PocketNotifications.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F66D7ECB250FA63300BC02D4"
-            BuildableName = "PocketNotification-Example.app"
-            BlueprintName = "PocketNotification-Example"
+            BuildableName = "PocketNotifications-Example.app"
+            BlueprintName = "PocketNotifications-Example"
             ReferencedContainer = "container:PocketNotifications.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

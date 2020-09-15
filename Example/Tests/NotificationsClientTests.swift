@@ -10,17 +10,11 @@ class NotificationsClientTests: XCTestCase {
         let client = NotificationsClient.authorized
         
         let expectation = self.expectation(description: #function)
-        expectation.expectedFulfillmentCount = 2
-        
-        client.authorize(options: []) { status in
+        client.authorize(options: []) { granted in
             expectation.fulfill()
-            XCTAssertTrue(status)
+            XCTAssertTrue(granted)
         }
         
-        client.getAuthorizationStatus { status in
-            expectation.fulfill()
-            XCTAssertEqual(status, .authorized)
-        }
         
         waitForExpectations(timeout: 0.0)
     }
@@ -29,17 +23,12 @@ class NotificationsClientTests: XCTestCase {
         let client = NotificationsClient.denied
         
         let expectation = self.expectation(description: #function)
-        expectation.expectedFulfillmentCount = 2
-        
-        client.authorize(options: []) { status in
+        client.authorize(options: []) { granted in
             expectation.fulfill()
-            XCTAssertFalse(status)
+            XCTAssertFalse(granted)
         }
         
-        client.getAuthorizationStatus { status in
-            expectation.fulfill()
-            XCTAssertEqual(status, .denied)
-        }
+        XCTAssertEqual(client.authorizationStatus(), .denied)
         
         waitForExpectations(timeout: 0.0)
     }

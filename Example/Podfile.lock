@@ -1,5 +1,5 @@
 PODS:
-  - PocketNotifications (0.0.1):
+  - PocketNotifications (0.0.2):
     - RxRelay
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
@@ -19,10 +19,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PocketNotifications: 1db46f9e56ff381f571c54e73f5accaa0d436619
+  PocketNotifications: 12740b6a691644cc695749d218cc02accfac2878
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: ebf19aae3c6aa8c78157315399c9c7b4a6664b32
+PODFILE CHECKSUM: 7b74595a96486509b4ec2f2c14e507c278a365b0
 
 COCOAPODS: 1.9.3

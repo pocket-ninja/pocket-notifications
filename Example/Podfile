@@ -2,6 +2,10 @@ platform :ios, '12.0'
 
 use_frameworks!
 
-target 'PocketNotifications_Tests' do
+target 'PocketNotifications-Example' do
   pod 'PocketNotifications', :path => '../'
+  
+  target 'PocketNotifications_Tests' do
+    inherit! :search_paths
+  end
 end

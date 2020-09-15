@@ -6,9 +6,9 @@ extension NotificationsClient {
         let publisher = PublishRelay<DelegateEvent>()
         
         return NotificationsClient(
-            getAuthorizationStatus: { $0(.authorized) },
+            authorizationStatus: { .authorized },
             authorize: { _, completion in
-                publisher.accept(.didChangeAuthorization(true))
+                publisher.accept(.didChangeAuthorization(granted: true))
                 completion(true)
             },
             schedule: { _, completion in completion(nil) },
@@ -21,9 +21,9 @@ extension NotificationsClient {
         let publisher = PublishRelay<DelegateEvent>()
         
         return NotificationsClient(
-            getAuthorizationStatus: { $0(.denied) },
+            authorizationStatus: { .denied },
             authorize: { _, completion in
-                publisher.accept(.didChangeAuthorization(false))
+                publisher.accept(.didChangeAuthorization(granted: false))
                 completion(false)
             },
             schedule: { _, completion in completion(nil) },
