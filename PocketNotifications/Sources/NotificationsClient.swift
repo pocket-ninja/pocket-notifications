@@ -7,7 +7,7 @@ public struct NotificationsClient {
         case denied
         case authorized
     }
-    
+
     public enum DelegateEvent {
         case didChangeAuthorization(granted: Bool)
         case willPresent(notification: UNNotification, completion: (UNNotificationPresentationOptions) -> Void)
@@ -51,6 +51,14 @@ extension NotificationsClient.AuthorizationStatus {
         switch self {
         case .authorized: return true
         case .denied, .notDetermined: return false
+        }
+    }
+
+    public static func from(_ status: UNAuthorizationStatus) -> Self {
+        switch status {
+        case .authorized: return .authorized
+        case .notDetermined: return .notDetermined
+        default: return .denied
         }
     }
 }

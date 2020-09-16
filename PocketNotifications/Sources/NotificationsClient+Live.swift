@@ -1,53 +1,100 @@
 import RxRelay
+import UIKit
 import UserNotifications
 
 extension NotificationsClient {
     public static func live(defaults: UserDefaults = .standard) -> NotificationsClient {
-        class Delegate: NSObject, UNUserNotificationCenterDelegate {
-            var relay = PublishRelay<DelegateEvent>()
+        let liveClient = LiveClient()
+        liveClient.defaults = defaults
+        liveClient.setup()
 
-            func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-                relay.accept(.openSettings(notification: notification))
+        return NotificationsClient(
+            authorizationStatus: { liveClient.status },
+            authorize: liveClient.authorize(options:then:),
+            schedule: liveClient.schedule(request:then:),
+            cancelRequests: liveClient.cancelRequests,
+            delegate: liveClient.relay.asObservable()
+        )
+    }
+}
+
+extension NotificationsClient {
+    final class LiveClient: NSObject, UNUserNotificationCenterDelegate {
+        var relay = PublishRelay<DelegateEvent>()
+        var center = UNUserNotificationCenter.current()
+        var defaults = UserDefaults.standard
+        var didBecomeActiveCancellable: Any?
+
+        var status: AuthorizationStatus {
+            get {
+                defaults.authorizationStatus ?? .notDetermined
             }
 
-            func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-                relay.accept(.didReceive(response: response, completionHandler: completionHandler))
-            }
+            set {
+                guard status != newValue else {
+                    return
+                }
 
-            func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-                relay.accept(.willPresent(notification: notification, completion: completionHandler))
+                defaults.authorizationStatus = newValue
+                relay.accept(.didChangeAuthorization(granted: newValue.canSendNotifications))
             }
         }
 
-        let center = UNUserNotificationCenter.current()
-        let delegate = Delegate()
-        center.delegate = delegate
+        func setup() {
+            center.delegate = self
 
-        return NotificationsClient(
-            authorizationStatus: { defaults.authorizationStatus ?? .notDetermined },
-            authorize: { options, completion in
-                center.requestAuthorization(options: options) { granted, _ in
-                    DispatchQueue.main.async {
-                        delegate.relay.accept(.didChangeAuthorization(granted: granted))
-                        completion(granted)
-                        defaults.authorizationStatus = granted ? .authorized : .denied
-                    }
+            didBecomeActiveCancellable = NotificationCenter.default.addObserver(
+                forName: UIApplication.didBecomeActiveNotification,
+                object: nil,
+                queue: OperationQueue.main,
+                using: { [weak self] _ in
+                    self?.updateStatus()
                 }
-                UIApplication.shared.registerForRemoteNotifications()
-            },
-            schedule: { request, completion in
-                center.add(request) { error in
-                    DispatchQueue.main.async {
-                        completion(error)
-                    }
+            )
+        }
+
+        func updateStatus() {
+            center.getNotificationSettings { [weak self] settings in
+                DispatchQueue.main.async {
+                    self?.status = AuthorizationStatus.from(settings.authorizationStatus)
                 }
-            },
-            cancelRequests: {
-                center.removeAllDeliveredNotifications()
-                center.removeAllPendingNotificationRequests()
-            },
-            delegate: delegate.relay.asObservable()
-        )
+            }
+        }
+
+        func schedule(request: UNNotificationRequest, then completion: @escaping (Error?) -> Void) {
+            center.add(request) { error in
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+
+        func authorize(options: UNAuthorizationOptions, then completion: @escaping (Bool) -> Void) {
+            center.requestAuthorization(options: options) { [weak self] granted, _ in
+                DispatchQueue.main.async {
+                    self?.status = granted ? .authorized : .denied
+                    completion(granted)
+                }
+            }
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+
+        func cancelRequests() {
+            center.removeAllDeliveredNotifications()
+            center.removeAllPendingNotificationRequests()
+        }
+
+        func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+            relay.accept(.openSettings(notification: notification))
+        }
+
+        func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+            relay.accept(.didReceive(response: response, completionHandler: completionHandler))
+        }
+
+        func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+            relay.accept(.willPresent(notification: notification, completion: completionHandler))
+        }
     }
 }
 
