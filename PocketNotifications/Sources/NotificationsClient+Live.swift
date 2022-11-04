@@ -1,4 +1,4 @@
-import RxRelay
+import Combine
 import UIKit
 import UserNotifications
 
@@ -13,14 +13,14 @@ extension NotificationsClient {
             authorize: liveClient.authorize(options:then:),
             schedule: liveClient.schedule(request:then:),
             cancelRequests: liveClient.cancelRequests,
-            delegate: liveClient.relay.asObservable()
+            delegate: liveClient.publisher.eraseToAnyPublisher()
         )
     }
 }
 
 extension NotificationsClient {
     final class LiveClient: NSObject, UNUserNotificationCenterDelegate {
-        var relay = PublishRelay<DelegateEvent>()
+        var publisher = PassthroughSubject<DelegateEvent, Never>()
         var center = UNUserNotificationCenter.current()
         var defaults = UserDefaults.standard
         var didBecomeActiveCancellable: Any?
@@ -36,7 +36,7 @@ extension NotificationsClient {
                 }
 
                 defaults.authorizationStatus = newValue
-                relay.accept(.didChangeAuthorization(granted: newValue.canSendNotifications))
+                publisher.send(.didChangeAuthorization(granted: newValue.canSendNotifications))
             }
         }
 
@@ -85,15 +85,15 @@ extension NotificationsClient {
         }
 
         func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-            relay.accept(.openSettings(notification: notification))
+            publisher.send(.openSettings(notification: notification))
         }
 
         func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-            relay.accept(.didReceive(response: response, completionHandler: completionHandler))
+            publisher.send(.didReceive(response: response, completionHandler: completionHandler))
         }
 
         func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-            relay.accept(.willPresent(notification: notification, completion: completionHandler))
+            publisher.send(.willPresent(notification: notification, completion: completionHandler))
         }
     }
 }

@@ -1,34 +1,34 @@
 import UserNotifications
-import RxRelay
+import Combine
 
 extension NotificationsClient {
     public static let authorized: NotificationsClient = {
-        let publisher = PublishRelay<DelegateEvent>()
+        let publisher = PassthroughSubject<DelegateEvent, Never>()
         
         return NotificationsClient(
             authorizationStatus: { .authorized },
             authorize: { _, completion in
-                publisher.accept(.didChangeAuthorization(granted: true))
+                publisher.send(.didChangeAuthorization(granted: true))
                 completion(true)
             },
             schedule: { _, completion in completion(nil) },
             cancelRequests: {},
-            delegate: publisher.asObservable()
+            delegate: publisher.eraseToAnyPublisher()
         )
     }()
     
     public static let denied: NotificationsClient = {
-        let publisher = PublishRelay<DelegateEvent>()
+        let publisher = PassthroughSubject<DelegateEvent, Never>()
         
         return NotificationsClient(
             authorizationStatus: { .denied },
             authorize: { _, completion in
-                publisher.accept(.didChangeAuthorization(granted: false))
+                publisher.send(.didChangeAuthorization(granted: false))
                 completion(false)
             },
             schedule: { _, completion in completion(nil) },
             cancelRequests: {},
-            delegate: publisher.asObservable()
+            delegate: publisher.eraseToAnyPublisher()
         )
     }()
 }

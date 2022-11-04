@@ -1,4 +1,4 @@
-import RxSwift
+import Combine
 import UserNotifications
 
 public struct NotificationsClient {
@@ -19,14 +19,14 @@ public struct NotificationsClient {
     public var authorize: (UNAuthorizationOptions, @escaping (Bool) -> Void) -> Void
     public var schedule: (UNNotificationRequest, @escaping (Error?) -> Void) -> Void
     public var cancelRequests: () -> Void
-    public var delegate: Observable<DelegateEvent>
+    public var delegate: AnyPublisher<DelegateEvent, Never>
 
     public init(
         authorizationStatus: @escaping () -> AuthorizationStatus,
         authorize: @escaping (UNAuthorizationOptions, @escaping (Bool) -> Void) -> Void,
         schedule: @escaping (UNNotificationRequest, @escaping (Error?) -> Void) -> Void,
         cancelRequests: @escaping () -> Void,
-        delegate: Observable<DelegateEvent>
+        delegate: AnyPublisher<DelegateEvent, Never>
     ) {
         self.authorizationStatus = authorizationStatus
         self.authorize = authorize

@@ -1,27 +1,15 @@
 PODS:
-  - PocketNotifications (0.0.2):
-    - RxRelay
-    - RxSwift (~> 5)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - PocketNotifications (0.0.4)
 
 DEPENDENCIES:
   - PocketNotifications (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - RxRelay
-    - RxSwift
 
 EXTERNAL SOURCES:
   PocketNotifications:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PocketNotifications: 12740b6a691644cc695749d218cc02accfac2878
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  PocketNotifications: d286d0b67045556f633fa16356ff412503875677
 
 PODFILE CHECKSUM: 7b74595a96486509b4ec2f2c14e507c278a365b0
 
