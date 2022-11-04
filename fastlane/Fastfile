@@ -48,7 +48,8 @@ private_lane :update do |options|
   )
 
   pod_lib_lint(
-    allow_warnings: true
+    allow_warnings: true,
+    verbose: true
   )
 
   type = options[:type]
