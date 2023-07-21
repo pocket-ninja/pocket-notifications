@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PocketNotifications'
-  s.version          = '0.0.6'
+  s.version          = '1.0.0'
   s.summary          = 'The Pocket Ninja Notifications client.'
 
   s.homepage         = 'https://github.com/pocket-ninja/pocket-notifications'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'egor mihneivch' => 'cursed.elfenlaid@gmail.com' }
   s.source           = { :git => 'git@github.com:pocket-ninja/pocket-notifications.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '14.0'
   s.swift_version = '5.5'
   s.static_framework = true
 

@@ -27,6 +27,13 @@ lane :major do
   update(type: "major")
 end
 
+lane :test do 
+  scan(
+    workspace: $workspace,
+    scheme: $scheme
+  )
+end 
+
 lane :submit do |options|
   push_to_git_remote(
     local_branch: "master",
@@ -42,11 +49,8 @@ lane :submit do |options|
 end
 
 private_lane :update do |options|
-  scan(
-    workspace: $workspace,
-    scheme: $scheme
-  )
-
+  test
+  
   pod_lib_lint(
     allow_warnings: true,
     verbose: true
