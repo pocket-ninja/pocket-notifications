@@ -21,7 +21,7 @@ class NotificationsClientTests: XCTestCase {
     
     func testAsyncAuthorizedMock() async throws {
         let client = NotificationsClient.authorized
-        let granted = try await client.authorize(options: [])
+        let granted = await client.authorize(options: [])
         XCTAssertTrue(granted)
     }
     
@@ -41,7 +41,7 @@ class NotificationsClientTests: XCTestCase {
     
     func testAsyncDeniedMock() async throws {
         let client = NotificationsClient.denied
-        let granted = try await client.authorize(options: [])
+        let granted = await client.authorize(options: [])
         XCTAssertFalse(granted)
     }
 }

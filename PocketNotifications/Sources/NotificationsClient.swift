@@ -17,34 +17,32 @@ public struct NotificationsClient {
 
     public var authorizationStatus: () -> AuthorizationStatus
     public var authorize: (UNAuthorizationOptions, @escaping (Bool) -> Void) -> Void
-    public var asyncAuthorize: (UNAuthorizationOptions) async throws -> Bool
     public var schedule: (UNNotificationRequest, @escaping (Error?) -> Void) -> Void
-    public var asyncSchedule: (UNNotificationRequest) async throws -> Void
     public var cancelRequests: () -> Void
     public var delegate: AnyPublisher<DelegateEvent, Never>
 
     public init(
         authorizationStatus: @escaping () -> AuthorizationStatus,
         authorize: @escaping (UNAuthorizationOptions, @escaping (Bool) -> Void) -> Void,
-        asyncAuthorize: @escaping (UNAuthorizationOptions) async throws -> Bool,
         schedule: @escaping (UNNotificationRequest, @escaping (Error?) -> Void) -> Void,
-        asyncSchedule: @escaping (UNNotificationRequest) async throws -> Void,
         cancelRequests: @escaping () -> Void,
         delegate: AnyPublisher<DelegateEvent, Never>
     ) {
         self.authorizationStatus = authorizationStatus
         self.authorize = authorize
-        self.asyncAuthorize = asyncAuthorize
         self.schedule = schedule
-        self.asyncSchedule = asyncSchedule
         self.cancelRequests = cancelRequests
         self.delegate = delegate
     }
 }
 
 extension NotificationsClient {
-    public func authorize(options: UNAuthorizationOptions) async throws -> Bool {
-        try await asyncAuthorize(options)
+    public func authorize(options: UNAuthorizationOptions) async -> Bool {
+        await withCheckedContinuation { continuation in
+            authorize(options: options) { granted in
+                continuation.resume(returning: granted)
+            }
+        }
     }
     
     public func authorize(options: UNAuthorizationOptions, then completion: @escaping (Bool) -> Void) {
@@ -52,7 +50,15 @@ extension NotificationsClient {
     }
 
     public func schedule(request: UNNotificationRequest) async throws {
-        try await asyncSchedule(request)
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            schedule(request: request) { error in
+                if let error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume()
+                }
+            }
+        }
     }
     
     public func schedule(request: UNNotificationRequest, then completion: @escaping (Error?) -> Void) {

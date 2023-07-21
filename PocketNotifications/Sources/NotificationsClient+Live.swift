@@ -11,9 +11,7 @@ extension NotificationsClient {
         return NotificationsClient(
             authorizationStatus: { liveClient.status },
             authorize: liveClient.authorize(options:then:),
-            asyncAuthorize: liveClient.authorize(options:),
             schedule: liveClient.schedule(request:then:),
-            asyncSchedule: liveClient.schedule(request:),
             cancelRequests: liveClient.cancelRequests,
             delegate: liveClient.publisher.eraseToAnyPublisher()
         )
@@ -63,10 +61,6 @@ extension NotificationsClient {
             }
         }
 
-        func schedule(request: UNNotificationRequest) async throws {
-            try await center.add(request)
-        }
-        
         func schedule(request: UNNotificationRequest, then completion: @escaping (Error?) -> Void) {
             center.add(request) { error in
                 DispatchQueue.main.async {
@@ -75,17 +69,6 @@ extension NotificationsClient {
             }
         }
         
-        func authorize(options: UNAuthorizationOptions) async throws -> Bool {
-            let granted = try await center.requestAuthorization(options: options)
-            
-            await MainActor.run {
-                UIApplication.shared.registerForRemoteNotifications()
-                self.status = granted ? .authorized : .denied
-            }
-            
-            return granted
-        }
-
         func authorize(options: UNAuthorizationOptions, then completion: @escaping (Bool) -> Void) {
             center.requestAuthorization(options: options) { [weak self] granted, _ in
                 DispatchQueue.main.async {
