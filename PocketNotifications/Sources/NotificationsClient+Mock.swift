@@ -11,7 +11,12 @@ extension NotificationsClient {
                 publisher.send(.didChangeAuthorization(granted: true))
                 completion(true)
             },
+            asyncAuthorize: { _ in
+                publisher.send(.didChangeAuthorization(granted: true))
+                return true
+            },
             schedule: { _, completion in completion(nil) },
+            asyncSchedule: { _ in },
             cancelRequests: {},
             delegate: publisher.eraseToAnyPublisher()
         )
@@ -26,7 +31,12 @@ extension NotificationsClient {
                 publisher.send(.didChangeAuthorization(granted: false))
                 completion(false)
             },
+            asyncAuthorize: { _ in
+                publisher.send(.didChangeAuthorization(granted: false))
+                return false
+            },
             schedule: { _, completion in completion(nil) },
+            asyncSchedule: { _ in },
             cancelRequests: {},
             delegate: publisher.eraseToAnyPublisher()
         )
