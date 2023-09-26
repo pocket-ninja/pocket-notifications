@@ -77,7 +77,9 @@ extension NotificationsClient {
                 }
             }
             
-            UIApplication.shared.registerForRemoteNotifications()
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
         }
 
         func cancelRequests() {

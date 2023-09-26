@@ -37,6 +37,7 @@ public struct NotificationsClient {
 }
 
 extension NotificationsClient {
+    @MainActor
     public func authorize(options: UNAuthorizationOptions) async -> Bool {
         await withCheckedContinuation { continuation in
             authorize(options: options) { granted in
