@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACF133EF2F2CB9DF00DD30ED /* PocketNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = ACF133EE2F2CB9DF00DD30ED /* PocketNotifications */; };
+		AC6EF5A22F2CEF9D004B789C /* PocketNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = AC6EF5A12F2CEF9D004B789C /* PocketNotifications */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,17 +27,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACF133EF2F2CB9DF00DD30ED /* PocketNotifications in Frameworks */,
+				AC6EF5A22F2CEF9D004B789C /* PocketNotifications in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC6EF5A02F2CEF9D004B789C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACD6B9DD2F2CB850006CE329 = {
 			isa = PBXGroup;
 			children = (
 				ACD6B9E82F2CB850006CE329 /* Demo */,
+				AC6EF5A02F2CEF9D004B789C /* Frameworks */,
 				ACD6B9E72F2CB850006CE329 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,7 +78,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				ACF133EE2F2CB9DF00DD30ED /* PocketNotifications */,
+				AC6EF5A12F2CEF9D004B789C /* PocketNotifications */,
 			);
 			productName = Demo;
 			productReference = ACD6B9E62F2CB850006CE329 /* Demo.app */;
@@ -102,7 +110,6 @@
 			mainGroup = ACD6B9DD2F2CB850006CE329;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				ACF133ED2F2CB9DF00DD30ED /* XCLocalSwiftPackageReference "../../pocket-notifications" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ACD6B9E72F2CB850006CE329 /* Products */;
@@ -362,15 +369,8 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		ACF133ED2F2CB9DF00DD30ED /* XCLocalSwiftPackageReference "../../pocket-notifications" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../pocket-notifications";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		ACF133EE2F2CB9DF00DD30ED /* PocketNotifications */ = {
+		AC6EF5A12F2CEF9D004B789C /* PocketNotifications */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PocketNotifications;
 		};
