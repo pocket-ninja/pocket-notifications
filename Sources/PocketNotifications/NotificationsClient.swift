@@ -9,7 +9,7 @@ public struct NotificationsClient {
     }
 
     public enum DelegateEvent {
-        case didChangeAuthorization(granted: Bool)
+        case didChangeAuthorization(status: AuthorizationStatus)
         case willPresent(notification: UNNotification, completion: (UNNotificationPresentationOptions) -> Void)
         case didReceive(response: UNNotificationResponse, completionHandler: () -> Void)
         case openSettings(notification: UNNotification?)
@@ -45,11 +45,8 @@ extension NotificationsClient {
             }
         }
     }
-    
-    public func authorize(options: UNAuthorizationOptions, then completion: @escaping (Bool) -> Void) {
-        authorize(options, completion)
-    }
 
+    @MainActor
     public func schedule(request: UNNotificationRequest) async throws {
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             schedule(request: request) { error in
@@ -62,24 +59,24 @@ extension NotificationsClient {
         }
     }
     
+    public func authorize(options: UNAuthorizationOptions, then completion: @escaping (Bool) -> Void) {
+        authorize(options, completion)
+    }
+    
     public func schedule(request: UNNotificationRequest, then completion: @escaping (Error?) -> Void) {
         schedule(request, completion)
     }
 }
 
-extension NotificationsClient.AuthorizationStatus {
-    public var canSendNotifications: Bool {
-        switch self {
-        case .authorized: return true
-        case .denied, .notDetermined: return false
-        }
-    }
-
-    public static func from(_ status: UNAuthorizationStatus) -> Self {
+public extension NotificationsClient.AuthorizationStatus {
+    init(_ status: UNAuthorizationStatus) {
         switch status {
-        case .authorized: return .authorized
-        case .notDetermined: return .notDetermined
-        default: return .denied
+        case .authorized:
+            self = .authorized
+        case .notDetermined:
+            self = .notDetermined
+        default:
+            self = .denied
         }
     }
 }

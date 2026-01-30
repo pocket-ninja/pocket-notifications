@@ -8,7 +8,7 @@ extension NotificationsClient {
         return NotificationsClient(
             authorizationStatus: { .authorized },
             authorize: { _, completion in
-                publisher.send(.didChangeAuthorization(granted: true))
+                publisher.send(.didChangeAuthorization(status: .authorized))
                 completion(true)
             },
             schedule: { _, completion in completion(nil) },
@@ -23,7 +23,7 @@ extension NotificationsClient {
         return NotificationsClient(
             authorizationStatus: { .denied },
             authorize: { _, completion in
-                publisher.send(.didChangeAuthorization(granted: false))
+                publisher.send(.didChangeAuthorization(status: .denied))
                 completion(false)
             },
             schedule: { _, completion in completion(nil) },

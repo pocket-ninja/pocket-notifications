@@ -36,7 +36,7 @@ extension NotificationsClient {
                 }
 
                 defaults.authorizationStatus = newValue
-                publisher.send(.didChangeAuthorization(granted: newValue.canSendNotifications))
+                publisher.send(.didChangeAuthorization(status: newValue))
             }
         }
 
@@ -56,7 +56,7 @@ extension NotificationsClient {
         func updateStatus() {
             center.getNotificationSettings { [weak self] settings in
                 DispatchQueue.main.async {
-                    self?.status = AuthorizationStatus.from(settings.authorizationStatus)
+                    self?.status = AuthorizationStatus(settings.authorizationStatus)
                 }
             }
         }

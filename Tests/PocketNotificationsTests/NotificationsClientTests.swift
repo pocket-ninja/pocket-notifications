@@ -1,4 +1,4 @@
-import PocketNotifications
+@testable import PocketNotifications
 import XCTest
 
 class NotificationsClientTests: XCTestCase {

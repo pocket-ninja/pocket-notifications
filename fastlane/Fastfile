@@ -2,68 +2,46 @@ default_platform :ios
 skip_docs
 opt_out_usage
 
-$scheme = 'PocketNotifications-Example'
-$podspec = 'PocketNotifications.podspec'
-$workspace = './Example/PocketNotifications.xcworkspace'
-$specsrepo = 'git@github.com:pocket-ninja/specs.git'
+lane :bump_version_patch do
+  bump_version(part: "patch")
+end
 
-before_all do |lane, options|
-  if options[:skip_checks]
-    UI.message "Skipping git status checks"
-  else
-    ensure_git_status_clean
+lane :bump_version_minor do
+  bump_version(part: "minor")
+end
+
+lane :bump_version_major do
+  bump_version(part: "major")
+end
+
+lane :bump_version do |options|
+  fastlane_require 'fastlane-ext'
+  raise "Invalid part, correct one is [patch|minor|major]" unless options[:part]
+
+  UI.message "Syncing git tags"
+  sync_git_tags
+
+  UI.message "Bumping project version"
+  cmd = "bundle exec git-version-bump " + options[:part]
+  raise "Failed to patch version! cmd: '#{cmd}'" unless system(cmd)
+end
+
+lane :test do
+  scan(scheme: "Demo", device: 'iPhone 16 Pro')
+end
+
+lane :test_if_needed do
+  unless stopped?
+    test
   end
 end
 
-lane :patch do
-  update(type: "patch")
-end
-
-lane :minor do
-  update(type: "minor")
-end
-
-lane :major do
-  update(type: "major")
-end
-
-lane :test do 
-  scan(
-    workspace: $workspace,
-    scheme: $scheme
-  )
-end 
-
-lane :submit do |options|
-  push_to_git_remote(
-    local_branch: "master",
-    remote_branch: "master",
-    remote: "origin"
-  )
-
-  pod_push(
-    path: $podspec,
-    repo: $specsrepo,
-    allow_warnings: true
-  )
-end
-
-private_lane :update do |options|
-  test
-  
-  pod_lib_lint(
-    allow_warnings: true,
-    verbose: true
-  )
-
-  type = options[:type]
-
-  if type == "none"
-    UI.message("No version type found")
-    return
+def stopped?
+  stop_keywords.any? do |k|
+    last_git_commit[:message].to_s.downcase.include?(k)
   end
+end
 
-  version = version_bump_podspec(path: $podspec, bump_type: type)
-  git_commit(path: $podspec, message: "Updating podspec")
-  add_git_tag(tag: version)
+def stop_keywords
+  ["wip", "stop"]
 end
