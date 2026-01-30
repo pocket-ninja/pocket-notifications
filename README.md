@@ -1,5 +1,5 @@
 # PocketNotifications
 
-The Pocket Ninja Remote Notifications client
+Pocket Apps Notifications client
 
 
