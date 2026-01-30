@@ -122,9 +122,14 @@ GEM
       xcodeproj (>= 1.13.0, < 2.0.0)
       xcpretty (~> 0.4.1)
       xcpretty-travis-formatter (>= 0.0.3, < 2.0.0)
+    fastlane-ext (1.0.27)
+      aws-sdk-s3 (> 0)
+      openssl (> 0)
+      xcodeproj (> 0)
     fastlane-sirp (1.0.0)
       sysrandom (~> 1.0)
     gh_inspector (1.1.3)
+    git-version-bump (0.19.1)
     google-apis-androidpublisher_v3 (0.54.0)
       google-apis-core (>= 0.11.0, < 2.a)
     google-apis-core (0.11.3)
@@ -179,6 +184,7 @@ GEM
     nanaimo (0.4.0)
     naturally (2.3.0)
     nkf (0.2.0)
+    openssl (4.0.0)
     optparse (0.8.1)
     os (1.1.4)
     ostruct (0.6.3)
@@ -233,6 +239,8 @@ PLATFORMS
 
 DEPENDENCIES
   fastlane
+  fastlane-ext
+  git-version-bump
 
 BUNDLED WITH
    2.7.2
